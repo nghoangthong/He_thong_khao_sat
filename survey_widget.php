@@ -10,13 +10,13 @@ while($row=$answers->fetch_assoc()){
 	<div class="d-flex w-100 justify-content-center align-items-center mb-2">
 		<label for="" class="control-label">Tìm khảo sát</label>
 		<div class="input-group input-group-sm col-sm-5">
-          <input type="text" class="form-control" id="filter" placeholder="Nhập từ khóa...">
+          <input type="text" class="form-control" id="filter" placeholder="Nhập từ khóa..." style="border-radius: 5px;">
           <span class="input-group-append">
-            <button type="button" class="btn btn-primary btn-flat" id="search">Tìm kiếm</button>
+            <button type="button" class="btn btn-primary btn-flat" id="search"  style="margin-left: 5px ;border-radius: 5px;">Tìm kiếm</button>
           </span>
         </div>
 	</div>
-	<div class=" w-100" id='ns' style="display: none"><center><b>No Result.</b></center></div>
+	<div class=" w-100" id='ns' style="display: none"><center><b>Không có kết quả.</b></center></div>
 	<div class="row">
 		<?php 
 		$survey = $conn->query("SELECT * FROM survey_set where '".date('Y-m-d')."' between date(start_date) and date(end_date) order by rand() ");
@@ -39,9 +39,9 @@ while($row=$answers->fetch_assoc()){
                	<hr class="border-primary">
                	<div class="d-flex justify-content-center w-100 text-center">
                		<?php if(!isset($ans[$row['id']])): ?>
-               			<a href="index.php?page=answer_survey&id=<?php echo $row['id'] ?>" class="btn btn-sm bg-gradient-primary"><i class="fa fa-pen-square"></i> Take Survey</a>
+               			<a href="index.php?page=answer_survey&id=<?php echo $row['id'] ?>" class="btn btn-sm bg-gradient-primary"><i class="fa fa-pen-square"></i> Khảo sát</a>
                		<?php else: ?>
-               			<p class="text-primary border-top border-primary">Done</p>
+               			<p class="text-primary border-top border-primary">Đã khảo sát</p>
                		<?php endif; ?>
                	</div>
                </div>

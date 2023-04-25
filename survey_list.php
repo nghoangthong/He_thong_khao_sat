@@ -3,7 +3,7 @@
 	<div class="card card-outline card-primary">
 		<div class="card-header">
 			<div class="card-tools">
-				<a class="btn btn-block btn-sm btn-default btn-flat border-primary" href="./index.php?page=new_survey"><i class="fa fa-plus"></i> Add </a>
+				<a class="btn btn-block btn-sm btn-default btn-flat border-primary" href="./index.php?page=new_survey"><i class="fa fa-plus" ></i > Thêm </a>
 			</div>
 		</div>
 		<div class="card-body">
@@ -70,7 +70,7 @@
 	$(document).ready(function(){
 		$('#list').dataTable()
 	$('.delete_survey').click(function(){
-	_conf("Are you sure to delete this survey?","delete_survey",[$(this).attr('data-id')])
+	_conf("Bạn có chắc không?","delete_survey",[$(this).attr('data-id')])
 	})
 	})
 	function delete_survey($id){

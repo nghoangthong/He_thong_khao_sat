@@ -46,14 +46,14 @@
     <div class="modal-dialog modal-md" role="document">
       <div class="modal-content">
         <div class="modal-header">
-        <h5 class="modal-title">Confirmation</h5>
+        <h5 class="modal-title">Xác nhận</h5>
       </div>
       <div class="modal-body">
         <div id="delete_content"></div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" id='confirm' onclick="">Continue</button>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" id='confirm' onclick="">Thực hiện</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Thoát</button>
       </div>
       </div>
     </div>
@@ -107,7 +107,6 @@
   <!-- Main Footer -->
   <footer class="main-footer">
     <strong>Copyright &copy; 2023 <a href="https://www.facebook.com/hoangthong.nguyen.771/ " target="_blank">Owen</a>.</strong>
-    All rights reserved.
     <div class="float-right d-none d-sm-inline-block">
       <b>Hệ thống khảo sát thực tế</b>
     </div>

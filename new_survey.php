@@ -11,29 +11,29 @@ if(!isset($conn)){
 				<div class="row">
 					<div class="col-md-6 border-right">
 						<div class="form-group">
-							<label for="" class="control-label">Title</label>
+							<label for="" class="control-label">Tiêu đề</label>
 							<input type="text" name="title" class="form-control form-control-sm" required value="<?php echo isset($stitle) ? $stitle : '' ?>">
 						</div>
 						<div class="form-group">
-							<label for="" class="control-label">Start</label>
+							<label for="" class="control-label">Bắt đầu</label>
 							<input type="date" name="start_date" class="form-control form-control-sm" required value="<?php echo isset($start_date) ? $start_date : '' ?>">
 						</div>
 						<div class="form-group">
-							<label for="" class="control-label">End</label>
+							<label for="" class="control-label">Kết thúc</label>
 							<input type="date" name="end_date" class="form-control form-control-sm" required value="<?php echo isset($end_date) ? $end_date : '' ?>">
 						</div>
 					</div>
 					<div class="col-md-6">
 						<div class="form-group">
-							<label class="control-label">Description</label>
+							<label class="control-label">Mô tả</label>
 							<textarea name="description" id="" cols="30" rows="4" class="form-control" required><?php echo isset($description) ? $description : '' ?></textarea>
 						</div>
 					</div>
 				</div>
 				<hr>
 				<div class="col-lg-12 text-right justify-content-center d-flex">
-					<button class="btn btn-primary mr-2">Save</button>
-					<button class="btn btn-secondary" type="button" onclick="location.href = 'index.php?page=survey_list'">Cancel</button>
+					<button class="btn btn-primary mr-2">Lưu</button>
+					<button class="btn btn-secondary" type="button" onclick="location.href = 'index.php?page=survey_list'">Thoát</button>
 				</div>
 			</form>
 		</div>
@@ -55,7 +55,7 @@ if(!isset($conn)){
 		    type: 'POST',
 			success:function(resp){
 				if(resp == 1){
-					alert_toast('Data successfully saved.',"success");
+					alert_toast('Thành công.',"success");
 					setTimeout(function(){
 						location.replace('index.php?page=survey_list')
 					},1500)

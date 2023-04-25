@@ -1,3 +1,4 @@
+<meta charset="UTF-8">
 <?php include 'db_connect.php' ?>
 <?php 
 $qry = $conn->query("SELECT * FROM survey_set where id = ".$_GET['id'])->fetch_array();
@@ -35,7 +36,7 @@ while($row=$answers->fetch_assoc()){
 		<div class="col-md-4">
 			<div class="card card-outline card-primary">
 				<div class="card-header">
-					<h3 class="card-title"><b>Survey Details</b></h3>
+					<h3 class="card-title"><b>Thông tin khảo sát</b></h3>
 					
 				</div>
 				<div class="card-body p-0 py-2">
@@ -45,18 +46,18 @@ while($row=$answers->fetch_assoc()){
 						<small><?php echo $description; ?></small>
 						<p style="padding-top: 10px; ">Bắt đầu: <b><?php echo date("M d, Y",strtotime($start_date)) ?></b></p>
 						<p>Kết thúc: <b><?php echo date("M d, Y",strtotime($end_date)) ?></b></p>
-						<p>Have Taken: <b><?php echo number_format($taken) ?></b></p>
+						<p>Số khảo sát: <b><?php echo number_format($taken) ?></b></p>
 
 
 					</div>
-					<hr class="border-primary">
+					<hr class="border-primary"> 
 				</div>
 			</div>
 		</div>
 		<div class="col-md-8">
 			<div class="card card-outline card-success">
 				<div class="card-header">
-					<h3 class="card-title"><b>Survey Report</b></h3>
+					<h3 class="card-title"><b>Báo cáo khảo sát</b></h3>
 					<div class="card-tools">
 						<button class="btn btn-flat btn-sm bg-gradient-success" type="button" id="print"><i class="fa fa-print"></i> Print</button>
 					</div>
@@ -74,10 +75,12 @@ while($row=$answers->fetch_assoc()){
 							
 							<?php if($row['type'] != 'textfield_s'):?>
 								<ul>
-							<?php foreach(json_decode($row['frm_option']) as $k => $v): 
-								$prog = ((isset($ans[$row['id']][$k]) ? count($ans[$row['id']][$k]) : 0) / $taken) * 100;
-								$prog = round($prog,2);
-								?>
+								<?php foreach(json_decode($row['frm_option']) as $k => $v): 
+    $taken = isset($ans[$row['id']]) ? count($ans[$row['id']]) : 0;
+    $prog = $taken > 0 ? ((isset($ans[$row['id']][$k]) ? count($ans[$row['id']][$k]) : 0) / $taken) * 100 : 0;
+    $prog = round($prog,2);
+?>
+
 								<li>
 									<div class="d-block w-100">
 										<b><?php echo $v ?></b>

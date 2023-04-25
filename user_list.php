@@ -33,14 +33,14 @@
 						<td><b><?php echo $row['email'] ?></b></td>
 						<td class="text-center">
 							<button type="button" class="btn btn-default btn-sm btn-flat border-info wave-effect text-info dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
-		                      Action
+		                      Hành động
 		                    </button>
 		                    <div class="dropdown-menu" style="">
-		                      <a class="dropdown-item view_user" href="javascript:void(0)" data-id="<?php echo $row['id'] ?>">View</a>
+		                      <a class="dropdown-item view_user" href="javascript:void(0)" data-id="<?php echo $row['id'] ?>">Xem</a>
+		                      
+		                      
 		                      <div class="dropdown-divider"></div>
-		                      <a class="dropdown-item" href="./index.php?page=edit_user&id=<?php echo $row['id'] ?>">Edit</a>
-		                      <div class="dropdown-divider"></div>
-		                      <a class="dropdown-item delete_user" href="javascript:void(0)" data-id="<?php echo $row['id'] ?>">Delete</a>
+		                      <a class="dropdown-item delete_user" href="javascript:void(0)" data-id="<?php echo $row['id'] ?>">Xóa</a>
 		                    </div>
 						</td>
 					</tr>	
@@ -54,10 +54,10 @@
 	$(document).ready(function(){
 		$('#list').dataTable()
 	$('.view_user').click(function(){
-		uni_modal("<i class='fa fa-id-card'></i> User Details","view_user.php?id="+$(this).attr('data-id'))
+		uni_modal("<i class='fa fa-id-card'></i> Thông tin tài khoản","view_user.php?id="+$(this).attr('data-id'))
 	})
 	$('.delete_user').click(function(){
-	_conf("Are you sure to delete this user?","delete_user",[$(this).attr('data-id')])
+	_conf("Bạn có chắc chắn?","delete_user",[$(this).attr('data-id')])
 	})
 	})
 	function delete_user($id){

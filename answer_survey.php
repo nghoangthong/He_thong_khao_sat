@@ -13,7 +13,7 @@ foreach($qry as $k => $v){
 		<div class="col-md-4">
 			<div class="card card-outline card-primary">
 				<div class="card-header">
-					<h3 class="card-title"><b>Survey Details</b></h3>
+					<h3 class="card-title"><b></b></h3>
 				</div>
 				<div class="card-body p-0 py-2">
 					<div class="container-fluid">
@@ -31,7 +31,7 @@ foreach($qry as $k => $v){
 		<div class="col-md-8">
 			<div class="card card-outline card-success">
 				<div class="card-header">
-					<h3 class="card-title"><b>Survey Questionaire</b></h3>
+					<h3 class="card-title"><b>Câu hỏi khảo sát</b></h3>
 				</div>
 				<form action="" id="manage-survey">
 					<input type="hidden" name="survey_id" value="<?php echo $id ?>">

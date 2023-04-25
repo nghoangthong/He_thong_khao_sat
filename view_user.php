@@ -11,7 +11,7 @@ foreach($qry as $k => $v){
 <div class="container-fluid">
 	<table class="table">
 		<tr>
-			<th>Name:</th>
+			<th>Tên:</th>
 			<td><b><?php echo ucwords($name) ?></b></td>
 		</tr>
 		<tr>
@@ -19,21 +19,21 @@ foreach($qry as $k => $v){
 			<td><b><?php echo $email ?></b></td>
 		</tr>
 		<tr>
-			<th>Contact:</th>
+			<th>Số điện thoại:</th>
 			<td><b><?php echo $contact ?></b></td>
 		</tr>
 		<tr>
-			<th>Address:</th>
+			<th>Địa chỉ:</th>
 			<td><b><?php echo $address ?></b></td>
 		</tr>
 		<tr>
-			<th>User Role:</th>
+			<th>Loại người dùng:</th>
 			<td><b><?php echo $type_arr[$type] ?></b></td>
 		</tr>
 	</table>
 </div>
 <div class="modal-footer display p-0 m-0">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Thoát</button>
 </div>
 <style>
 	#uni_modal .modal-footer{

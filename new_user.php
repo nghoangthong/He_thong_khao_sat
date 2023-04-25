@@ -36,7 +36,7 @@
 							<label for="" class="control-label">Loại người dùng</label>
 							<select name="type" id="type" class="custom-select custom-select-sm">
 								<option value="3" <?php echo isset($type) && $type == 3 ? 'selected' : '' ?>>Khách</option>
-								<option value="2" <?php echo isset($type) && $type == 2 ? 'selected' : '' ?>>Nhân viên</option>
+								<option value="2" <?php echo isset($type) && $type == 2 ? 'selected' : '' ?>>Thành viên</option>
 								<option value="1" <?php echo isset($type) && $type == 1 ? 'selected' : '' ?>>Admin</option>
 							</select>
 						</div>

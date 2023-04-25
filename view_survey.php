@@ -22,7 +22,7 @@ $answers = $conn->query("SELECT distinct(user_id) from answers where survey_id =
 						<small><?php echo $description; ?></small>
 						<p>Bắt đầu: <b><?php echo date("M d, Y",strtotime($start_date)) ?></b></p>
 						<p>Kết thúc: <b><?php echo date("M d, Y",strtotime($end_date)) ?></b></p>
-						<p>Have Taken: <b><?php echo number_format($answers) ?></b></p>
+						<p>Số khảo sát: <b><?php echo number_format($answers) ?></b></p>
 
 					</div>
 					<hr class="border-primary">
@@ -32,9 +32,9 @@ $answers = $conn->query("SELECT distinct(user_id) from answers where survey_id =
 		<div class="col-md-8">
 			<div class="card card-outline card-success">
 				<div class="card-header">
-					<h3 class="card-title"><b>Survey Questionaire</b></h3>
+					<h3 class="card-title"><b>Câu hỏi khảo sát</b></h3>
 					<div class="card-tools">
-						<button class="btn btn-block btn-sm btn-default btn-flat border-success new_question" type="button"><i class="fa fa-plus"></i> Add New Question</button>
+						<button class="btn btn-block btn-sm btn-default btn-flat border-success new_question" type="button"><i class="fa fa-plus"></i> Thêm câu hỏi</button>
 					</div>
 				</div>
 				<form action="" id="manage-sort">
@@ -49,9 +49,9 @@ $answers = $conn->query("SELECT distinct(user_id) from answers where survey_id =
 								<span class="dropleft float-right">
 									<a class="fa fa-ellipsis-v text-dark" href="javascript:void(0)" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
 									<div class="dropdown-menu" style="">
-								        <a class="dropdown-item edit_question text-dark" href="javascript:void(0)" data-id="<?php echo $row['id'] ?>">Edit</a>
+								        <a class="dropdown-item edit_question text-dark" href="javascript:void(0)" data-id="<?php echo $row['id'] ?>">Chỉnh sửa</a>
 								        <div class="dropdown-divider"></div>
-								        <a class="dropdown-item delete_question text-dark" href="javascript:void(0)" data-id="<?php echo $row['id'] ?>">Delete</a>
+								        <a class="dropdown-item delete_question text-dark" href="javascript:void(0)" data-id="<?php echo $row['id'] ?>">Xóa</a>
 								     </div>
 								</span>	
 							</div>	
@@ -110,14 +110,14 @@ $answers = $conn->query("SELECT distinct(user_id) from answers where survey_id =
 		})
 	})
 	$('.new_question').click(function(){
-		uni_modal("New Question","manage_question.php?sid=<?php echo $id ?>","large")
+		uni_modal("Câu hỏi mới","manage_question.php?sid=<?php echo $id ?>","large")
 	})
 	$('.edit_question').click(function(){
-		uni_modal("New Question","manage_question.php?sid=<?php echo $id ?>&id="+$(this).attr('data-id'),"large")
+		uni_modal("Câu hỏi mới","manage_question.php?sid=<?php echo $id ?>&id="+$(this).attr('data-id'),"large")
 	})
 	
 	$('.delete_question').click(function(){
-	_conf("Are you sure to delete this question?","delete_question",[$(this).attr('data-id')])
+	_conf("Bạn có chắc muốn xóa câu hỏi?","delete_question",[$(this).attr('data-id')])
 	})
 	function delete_question($id){
 		start_load()
@@ -127,7 +127,7 @@ $answers = $conn->query("SELECT distinct(user_id) from answers where survey_id =
 			data:{id:$id},
 			success:function(resp){
 				if(resp==1){
-					alert_toast("Data successfully deleted",'success')
+					alert_toast("Thành công",'success')
 					setTimeout(function(){
 						location.reload()
 					},1500)

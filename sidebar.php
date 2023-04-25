@@ -23,71 +23,127 @@
             </a>
             
           </li>    
-        <?php if($_SESSION['login_type'] == 1): ?>
-          <li class="nav-item">
-            <a href="#" class="nav-link nav-edit_user">
-              <i class="nav-icon fas fa-users"></i>
-              <p>
-                Người dùng
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="./index.php?page=new_user" class="nav-link nav-new_user tree-item">
-                  <i class="fas fa-angle-right nav-icon"></i>
-                  <p>Thêm người dùng</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="./index.php?page=user_list" class="nav-link nav-user_list tree-item">
-                  <i class="fas fa-angle-right nav-icon"></i>
-                  <p>Danh sách người dùng</p>
-                </a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link nav-is-tree nav-edit_survey nav-view_survey">
-              <i class="nav-icon fa fa-poll-h"></i>
-              <p>
-                Khảo sát
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="./index.php?page=new_survey" class="nav-link nav-new_survey tree-item">
-                  <i class="fas fa-angle-right nav-icon"></i>
-                  <p>Thêm khảo sát</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="./index.php?page=survey_list" class="nav-link nav-survey_list tree-item">
-                  <i class="fas fa-angle-right nav-icon"></i>
-                  <p>Danh sách khảo sát</p>
-                </a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-item">
-            <a href="./index.php?page=survey_report" class="nav-link nav-survey_report">
-              <i class="nav-icon fas fa-poll"></i>
-              <p>
-                Báo cáo khảo sát
-              </p>
-            </a>
-          </li>     
-        <?php else: ?>
-          <li class="nav-item">
+
+
+        <?php 
+if($_SESSION['login_type'] == 1 ){
+  // Type 1: display all navigation items
+?>
+  <li class="nav-item">
+    <a href="#" class="nav-link nav-edit_user">
+      <i class="nav-icon fas fa-users"></i>
+      <p>
+        Người dùng
+        <i class="right fas fa-angle-left"></i>
+      </p>
+    </a>
+    <ul class="nav nav-treeview">
+      <li class="nav-item">
+        <a href="./index.php?page=new_user" class="nav-link nav-new_user tree-item">
+          <i class="fas fa-angle-right nav-icon"></i>
+          <p>Thêm người dùng</p>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="./index.php?page=user_list" class="nav-link nav-user_list tree-item">
+          <i class="fas fa-angle-right nav-icon"></i>
+          <p>Danh sách người dùng</p>
+        </a>
+      </li>
+    </ul>
+  </li>
+          
+  <li class="nav-item">
+    <a href="#" class="nav-link nav-is-tree nav-edit_survey nav-view_survey">
+      <i class="nav-icon fa fa-poll-h"></i>
+      <p>
+      Khảo sát
+        <i class="right fas fa-angle-left"></i>
+      </p>
+    </a>
+    <ul class="nav nav-treeview">
+      <li class="nav-item">
+        <a href="./index.php?page=new_survey" class="nav-link nav-new_survey tree-item">
+          <i class="fas fa-angle-right nav-icon"></i>
+          <p>Thêm khảo sát</p>
+          </a>
+      </li>
+      <li class="nav-item">
+        <a href="./index.php?page=survey_list" class="nav-link nav-survey_list tree-item">
+          <i class="fas fa-angle-right nav-icon"></i>
+          <p>Danh sách khảo sát</p>
+        </a>
+      </li>
+      <li class="nav-item">
+      <a href="./index.php?page=survey_report" class="nav-link nav-survey_report">
+      <i class="fas fa-angle-right nav-icon"></i>
+      <p>
+        Báo cáo khảo sát
+      </p>
+        </a>
+      </li>
+    </ul>   
+  
+  <?php 
+} elseif ($_SESSION['login_type'] == 2) {
+  // Type 2: display all navigation items except for new_user and user_list
+?>
+  <li class="nav-item">
+    <a href="#" class="nav-link nav-is-tree nav-edit_survey nav-view_survey">
+      <i class="nav-icon fa fa-poll-h"></i>
+      <p>
+        Khảo sát
+        <i class="right fas fa-angle-left"></i>
+      </p>
+    </a>
+    <ul class="nav nav-treeview">
+      <li class="nav-item">
+        <a href="./index.php?page=new_survey" class="nav-link nav-new_survey tree-item">
+          <i class="fas fa-angle-right nav-icon"></i>
+          <p>Thêm khảo sát</p>
+          </a>
+      </li>
+      <li class="nav-item">
+        <a href="./index.php?page=survey_list" class="nav-link nav-survey_list tree-item">
+          <i class="fas fa-angle-right nav-icon"></i>
+          <p>Danh sách khảo sát</p>
+        </a>
+      </li>
+      <li class="nav-item">
+      <a href="./index.php?page=survey_report" class="nav-link nav-survey_report">
+      <i class="fas fa-angle-right nav-icon"></i>
+      <p>
+        Báo cáo khảo sát
+      </p>
+        </a>
+      </li>
+    </ul>
+  </li>
+  <li class="nav-item">
             <a href="./index.php?page=survey_widget" class="nav-link nav-survey_widget nav-answer_survey">
-              <i class="nav-icon fas fa-poll-h"></i>
+              <i class="fa fa-list nav-icon"></i>
               <p>
-              Danh sách khảo sát
+              Khảo sát thực tế
               </p>
             </a>
           </li>  
-        <?php endif; ?>
+          
+
+
+          <?php 
+} elseif ($_SESSION['login_type'] == 3) {
+  // Type 2: display all navigation items except for new_user and user_list
+?>
+  
+  <li class="nav-item">
+            <a href="./index.php?page=survey_widget" class="nav-link nav-survey_widget nav-answer_survey">
+              <i class="fa fa-list nav-icon"></i>
+              <p>
+              Khảo sát thực tế
+              </p>
+            </a>
+          </li>  
+          <?php } ?>
         </ul>
       </nav>
     </div>

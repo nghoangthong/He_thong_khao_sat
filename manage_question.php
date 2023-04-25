@@ -15,27 +15,27 @@ foreach($qry as $k => $v){
 						<input type="hidden" name="id" value="<?php echo isset($id) ? $id : '' ?>">
 						<input type="hidden" name="sid" value="<?php echo isset($_GET['sid']) ? $_GET['sid'] : '' ?>">
 						<div class="form-group">
-							<label for="" class="control-label">Question</label>
+							<label for="" class="control-label">Câu hỏi</label>
 							<textarea name="question" id="" cols="30" rows="4" class="form-control"><?php echo isset($question)? $question: '' ?></textarea>
 						</div>
 						<div class="form-group">
-							<label for="" class="control-label">Question Answer Type</label>
+							<label for="" class="control-label">Dạng câu hỏi</label>
 							<select name="type" id="type" class="custom-select custom-select-sm">
 								<?php if(isset($id)): ?>
-								<option value="" disabled="" selected="">Please Select here</option>
+								<option value="" disabled="" selected="">Chọn tại đây</option>
 								<?php endif; ?>
-								<option value="radio_opt" <?php echo isset($type) && $type == 'radio_opt' ? 'selected':'' ?>>Single Answer/Radio Button</option>
-								<option value="check_opt" <?php echo isset($type) && $type == 'check_opt' ? 'selected':'' ?>>Multiple Answer/Check Boxes</option>
-								<option value="textfield_s" <?php echo isset($type) && $type == 'textfield_s' ? 'selected':'' ?>>Text Field/ Text Area</option>
+								<option value="radio_opt" <?php echo isset($type) && $type == 'radio_opt' ? 'selected':'' ?>>Một kết quả</option>
+								<option value="check_opt" <?php echo isset($type) && $type == 'check_opt' ? 'selected':'' ?>>Nhiều kết quả</option>
+								<option value="textfield_s" <?php echo isset($type) && $type == 'textfield_s' ? 'selected':'' ?>>Đoạn văn bản</option>
 							</select>
 						</div>
 						
 				</div>
 				<div class="col-sm-6">
-					<b>Preview</b>
+					<b>Xem trước</b>
 					<div class="preview">
 						<?php if(!isset($id)): ?>
-						<center><b>Select Question Answer type first.</b></center>
+						<center><b>Chọn Câu trả lời Câu trả lời đầu tiên</b></center>
 						<?php else: ?>
 							<div class="callout callout-info">
 							<?php if($type != 'textfield_s'): 
@@ -52,7 +52,7 @@ foreach($qry as $k => $v){
 								      	<th class="text-center"></th>
 
 								      	<th class="text-center">
-								      		<label for="" class="control-label">Label</label>
+								      		<label for="" class="control-label">Nhãn</label>
 								      	</th>
 								      	<th class="text-center"></th>
 							     	</tr>
@@ -90,7 +90,7 @@ foreach($qry as $k => $v){
 						</div>
 
 						<?php else: ?>
-								<textarea name="frm_opt" id="" cols="30" rows="10" class="form-control" disabled="" placeholder="Write Something here..."></textarea>
+								<textarea name="frm_opt" id="" cols="30" rows="10" class="form-control" disabled="" placeholder="Viết nội dung tại đây"></textarea>
 						<?php endif; ?>
 						<?php endif; ?>
 					</div>
@@ -112,7 +112,7 @@ foreach($qry as $k => $v){
 		      	<th class="text-center"></th>
 
 		      	<th class="text-center">
-		      		<label for="" class="control-label">Label</label>
+		      		<label for="" class="control-label">Nhãn</label>
 		      	</th>
 		      	<th class="text-center"></th>
 	     	</tr>
@@ -168,7 +168,7 @@ foreach($qry as $k => $v){
 		      	<th class="text-center"></th>
 
 		      	<th class="text-center">
-		      		<label for="" class="control-label">Label</label>
+		      		<label for="" class="control-label">Nhãn</label>
 		      	</th>
 		      	<th class="text-center"></th>
 	     	</tr>
@@ -213,7 +213,7 @@ foreach($qry as $k => $v){
 </div>
 <div id="textfield_s_clone" style="display: none">
 	<div class="callout callout-info">
-		<textarea name="frm_opt" id="" cols="30" rows="10" class="form-control" disabled=""  placeholder="Write Something here..."></textarea>
+		<textarea name="frm_opt" id="" cols="30" rows="10" class="form-control" disabled=""  placeholder="Việt nội dung tại đây"></textarea>
 	</div>
 </div>
 <script>

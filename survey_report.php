@@ -6,7 +6,7 @@ $answers = $conn->query("SELECT distinct(survey_id) from answers where user_id =
 	<div class="d-flex w-100 justify-content-center align-items-center mb-2">
 		<label for="" class="control-label">Tìm khảo sát</label>
 		<div class="input-group input-group-sm col-sm-5">
-          <input type="text" class="form-control" id="filter" placeholder="Nhập từ khóa...">
+          <input type="text" class="form-control" id="filter" placeholder="Nhập từ khóa..." style="border-radius: 10px;">
           <span class="input-group-append">
             <button type="button" class="btn btn-primary btn-flat" id="search">Tìm kiếm</button>
           </span>
